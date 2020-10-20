@@ -48,7 +48,7 @@ You can find this code in github, App.js of this repository
 ```javascript
 function App() {
 
-    function status_401_403(Message) {
+    function status_401_403() {
         alert("Log Out");
     }
 
@@ -56,6 +56,13 @@ function App() {
 
     function onClick() {
         runner.get('http://localhost:61419/weatherforecast').then(response => {
+            alert(response);
+        }).catch(errorMessage => {
+            if (errorMessage)
+                alert(errorMessage);
+        });
+
+        runner.post('http://localhost:61419/weatherforecast', null, null, false, false, [{ namme: 'nome', value: 123 }]).then(response => {
             alert(response);
         }).catch(errorMessage => {
             if (errorMessage)

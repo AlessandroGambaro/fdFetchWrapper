@@ -1,6 +1,6 @@
 {
   "name": "fd-fetch-wrapper",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple wrapper around fetch function to manage in a simple way the errors from BE using http status code",
   "author": "alessandro gambaro",
   "license": "MIT",
