@@ -42,6 +42,35 @@ post = (url, params, token, isFile = false, isBlob = false, additionalParams = [
 put = (url, params, token, isFile = false, isBlob = false)
 ```
 
+
+## Sample
+You can find this code in github, App.js of this repository
+```javascript
+function App() {
+
+    function status_401_403(Message) {
+        alert("Log Out");
+    }
+
+    const runner = new FetchWrapper(null, null, status_401_403);
+
+    function onClick() {
+        runner.get('http://localhost:61419/weatherforecast').then(response => {
+            alert(response);
+        }).catch(errorMessage => {
+            if (errorMessage)
+                alert(errorMessage);
+        });
+    }
+
+    return (
+        <React.Fragment>
+        <button onClick={onClick}>Fetch Test</button>
+        </React.Fragment>
+    );
+}
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
