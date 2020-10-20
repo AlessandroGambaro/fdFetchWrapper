@@ -20,12 +20,12 @@ function App() {
         alert(errorMessage);
     });
 
-    runner.post('http://localhost:61419/weatherforecast', null, null, false, false, [{ namme: 'nome', value: 123 }]).then(response => {
-      alert(response);
-    }).catch(errorMessage => {
-      if (errorMessage)
-        alert(errorMessage);
-    });
+    // runner.post('http://localhost:61419/weatherforecast', null, null, false, false, [{ namme: 'nome', value: 123 }]).then(response => {
+    //   alert(response);
+    // }).catch(errorMessage => {
+    //   if (errorMessage)
+    //     alert(errorMessage);
+    // });
   }
 
   return (

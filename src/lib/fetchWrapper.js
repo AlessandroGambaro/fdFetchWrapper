@@ -103,9 +103,12 @@ class FetchWrapper {
 
                 throw new Error(labels.errorGeneric);
             })
-            .then(errorMessage => {
-                if (errorMessage)
-                    throw new Error(errorMessage);
+            .then(finalMessage => {
+                if (typeof (finalMessage) === 'object')
+                    return finalMessage;
+
+                if (finalMessage)
+                    throw new Error(finalMessage);
 
                 throw new Error(labels.errorGeneric);
             });
